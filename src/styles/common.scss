@@ -1,0 +1,102 @@
+@import '../_plugins/_ui/_styles/variables';
+@import '../../node_modules/purecss/build/base-min.css';
+@import '../../node_modules/purecss/build/grids-min.css';
+@import '../_plugins/_ui/_styles/transitions';
+
+* {
+  box-sizing: border-box; }
+html, body, html .pure-g [class *="pure-u"] {
+  font-family: Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html, body {
+  background: #fff;
+  color: $theme_font_color;
+  font-size: 12px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.5;}
+h1 { font-size: 36px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; }
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  appearance: none
+}
+p {
+  margin: 0; }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: black; }
+//  -----------------------------------------------------------
+
+.mri-shadow-lg {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, .5), 0 -2px 8px -5px rgba(0, 0, 0, 0.5); }
+.mri-shadow-md {
+  box-shadow: 0 4px 1px -1px rgba(0, 0, 0, .02) }
+.mri-shadow-sm {
+  box-shadow: 0 2px 4px -3px rgba(0, 0, 0, .10); }
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-center {
+  text-align: center; }
+.text-left {
+  text-align: left; }
+.text-right {
+  text-align: right; }
+.grid-spacing {
+  margin-left: -6px;
+  margin-right: -6px;
+}
+.grid-spacing-u {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.drag-handle {
+  cursor: move;
+  cursor: -webkit-grabbing; }
+[class*='mri-hairline'] { position: relative; }
+[class*='mri-hairline']::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0 solid #ddd;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+.mri-hairline--top::after {
+  border-top-width: 1px;
+}
+.mri-hairline--right::after {
+  border-right-width: 1px;
+}
+.mri-hairline--bottom::after {
+  border-bottom-width: 1px;
+}
+.mri-hairline--left::after {
+  border-left-width: 1px;
+}
+.mri-hairline--top-bottom::after {
+  border-width: 1px 0;
+}
+.mri-hairline--left-right::after {
+  border-width: 0 1px;
+}
+.mri-hairline::after {
+  border-width: 1px;
+}
