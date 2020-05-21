@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import axios from './_axios'
+import axios from './axios'
 // js 引入 scss 变量
-import scss_vars from './styles/variables.scss'
-import ui from './plugins/ui'
-import utils from './plugins/utils'
+import scss_vars from './ui/_styles/variables.scss'
+import ui from './ui'
+import utils from './utils'
+import preventReClick from './directives/preventReClick'
 
 Vue.config.productionTip = false
 

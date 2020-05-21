@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss">
-  @import "./../../../_plugins/_ui/_styles/variables";
+  @import "../_styles/variables.scss";  
   .mri-paper { display: grid; grid-template-columns: 1fr 400px; background: #fff; height: 89vh; border-radius: $radius_lg; }
   .mri-paper .mri-paper--main { padding: $gap_3; overflow-y: auto; }
   .mri-paper.full .mri-paper--main { width: 100%; }

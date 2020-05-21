@@ -21,7 +21,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @import "./../../../_plugins/_ui/_styles/variables";
+  @import "../_styles/variables.scss";  
   .top-view { position: relative; display: grid; grid-template-columns: auto 1fr 300px; align-items: center; height: $height_2_inner*2; padding: 0 $gap_1; grid-column-gap: $gap_1; }
   /*.top-view::after { border-color: #fff; }*/
   .top-view--left { padding-right: $gap_4; }
