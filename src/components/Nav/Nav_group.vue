@@ -5,6 +5,8 @@
 </template>
 
 <style scoped lang="scss">
-  @import './../../../_styles/variables';
-  .nav-group { padding: $gap_1 0; }
+@import '../../ui/_styles/variables.scss';
+.nav-group {
+  padding: $gap_1 0;
+}
 </style>

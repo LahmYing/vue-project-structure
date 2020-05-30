@@ -15,8 +15,11 @@ Vue.use(preventReClick)
 
 Vue.prototype.$http = axios
 Vue.prototype.$scssVars = scss_vars
+
 Vue.use(ui)
 Vue.use(utils)
+
+Vue.component('Navigation', require('./components/Nav/Navigation.vue').default)
 
 new Vue({
   router,

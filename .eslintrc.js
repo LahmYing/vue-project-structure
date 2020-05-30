@@ -15,5 +15,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'camelcase': 'off',
     'no-trailing-spaces': 'off',
+    'eol-last': 'off',
+    'comma-dangle': 'off',
+    'vue/no-unused-components': 'off',
   }
 }
