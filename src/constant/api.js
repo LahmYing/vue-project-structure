@@ -1,3 +1,5 @@
 // order
-export const GET_ORDER_STATUS = '/api/order/order-status' // 订单状态
+export const ORDER_STATUS = '/api/order/order-status'
+
+export const STORE_BASIC_INFO = '/api/store/store-basic-info'
 
