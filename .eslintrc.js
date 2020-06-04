@@ -18,5 +18,6 @@ module.exports = {
     'eol-last': 'off',
     'comma-dangle': 'off',
     'vue/no-unused-components': 'off',
+    'dot-notation': 'off',
   }
 }

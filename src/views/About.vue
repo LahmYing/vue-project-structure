@@ -17,7 +17,7 @@
       <input type="text" v-model="store_basic_info.name" />
       <input type="text" v-model="store_basic_info.type" />
       <input type="text" v-model="store_basic_info.desc" />
-      <button @click="updateStoreBasicInfo"></button>
+      <button @click="updateStoreBasicInfo">updateStoreBasicInfo</button>
     </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     updateStoreBasicInfo () {
-      putStoreBasicInfo(this.store_id, {
+      this.putStoreBasicInfo(this.store_id, {
         name: this.store_basic_info.name,
         description: this.store_basic_info.desc,
         type: this.store_basic_info.type,
