@@ -19,6 +19,17 @@
       <input type="text" v-model="store_basic_info.desc" />
       <button @click="updateStoreBasicInfo">updateStoreBasicInfo</button>
     </div>
+
+    <div>
+      <h2>fake-ant-button</h2>
+      <f-button
+        type="warn"
+        shape="circle"
+        size="small"
+        :loading="true"
+        :disabled="true"
+      >fake ant button</f-button>
+    </div>
   </div>
 </template>
 
@@ -36,6 +47,7 @@ export default {
   components: {
     'a-layout': () => import('../components/slot_example/a/layout'),
     'current-user': () => import('../components/slot_example/b/current_user'),
+    'f-button': () => import('../components/fake_ant/button/button'),
   },
   methods: {
     updateStoreBasicInfo () {
