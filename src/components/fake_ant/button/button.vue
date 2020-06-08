@@ -1,5 +1,5 @@
 <template>
-  <button :class="classes">
+  <button :class="classes" @click="$emit('on-click')">
     <slot></slot>
   </button>
 </template>
@@ -20,28 +20,36 @@ export default {
       },
       default: 'default'
     },
-    loading: Boolean,
-    disabled: Boolean,
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
   },
   data () {
     return {
-      prefixCls: 'f',
+      prefixCls: 'f-btn',
       classes: {}
     }
   },
   // 用 created 不用 mounted
   created () {
     const { type, shape, size, loading, disabled } = this.$props
+    const { prefixCls } = this
     this.classes = {
-      [`${this.prefixCls}-${type}`]: true,
-      [`${this.prefixCls}-${shape}`]: true,
-      [`${this.prefixCls}-${size}`]: true,
-      [`${this.prefixCls}-loading`]: loading,
-      [`${this.prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-${type}`]: true,
+      [`${prefixCls}-${shape}`]: true,
+      [`${prefixCls}-${size}`]: true,
+      [`${prefixCls}-loading`]: loading,
+      [`${prefixCls}-disabled`]: disabled,
     }
   }
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+@import './style/index.less';
 </style>
