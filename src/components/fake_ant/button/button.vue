@@ -1,11 +1,18 @@
 <template>
-  <button :class="classes" @click="$emit('on-click')">
+  <button
+    :class="classes"
+    @click="$emit('on-click')"
+    :disabled="attr.disabled"
+    :loading="attr.loading"
+  >
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
+  // 继承 attribute
+  inheritAttrs: false,
   props: {
     type: String,
     shape: {
@@ -32,20 +39,25 @@ export default {
   data () {
     return {
       prefixCls: 'f-btn',
-      classes: {}
+      classes: {},
+      attr: {
+        disabled: false,
+        loading: false,
+      }
     }
   },
   // 用 created 不用 mounted
   created () {
-    const { type, shape, size, loading, disabled } = this.$props
+    const { type, shape, size, loading, disabled } = this
     const { prefixCls } = this
     this.classes = {
+      [`${prefixCls}`]: true,
       [`${prefixCls}-${type}`]: true,
       [`${prefixCls}-${shape}`]: true,
       [`${prefixCls}-${size}`]: true,
-      [`${prefixCls}-loading`]: loading,
-      [`${prefixCls}-disabled`]: disabled,
     }
+    this.attr.disabled = disabled
+    this.attr.loading = loading
   }
 }
 </script>

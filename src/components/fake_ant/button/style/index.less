@@ -9,6 +9,7 @@
 .@{btn-prefix-cls} {
 
   &-warn {
+    color: red;
     // ?
     // .btn-primary;
 
@@ -25,32 +26,45 @@
   }
 
   &-circle {
+    border-radius: 32px;
     // mixin 
     // .btn-square(@btn-prefix-cls);
   }
 
-  &-loading {
-    position: relative;
+  &-round {
+    border-radius: 40px;
+  }
 
-    // ?
+  // [attr]
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  // [attr]
+  &[loading] {
+
+    // 
     &:not([disabled]) {
       pointer-events: none;
+
     }
   }
 
-  &-background-ghost&-link {
-    // mixin
-    // .button-variant-ghost(@link-color; transparent);
-
-    // color: @component-background;
-  }
-
-  &&-loading:not(&-circle):not(&-circle-outline):not(&-icon-only) {
-    padding-left: 29px;
-    
-    // .@{iconfont-css-prefix}:not(:last-child) {
-    //   margin-left: -14px;
+  &-loading {
+    // not ?
+    // &:not([disabled]) {
+    //   pointer-events: none;
     // }
   }
+
+  // &-background-ghost&-link {
+  //   // mixin
+  //   .button-variant-ghost(@link-color; transparent);
+  //   color: @component-background;
+  // }
+
+  // &&-loading:not(&-circle):not(&-circle-outline):not(&-icon-only) {
+  //   padding-left: 29px;
+  // }
 
 }
