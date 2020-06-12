@@ -8,7 +8,12 @@ const routes = [
     path: '/',
     name: 'About',
     component: () => import('../views/About.vue')
-  }
+  },
+  {
+    path: '/merchant/:merchant_id',
+    name: 'Merchant',
+    component: () => import('../views/About.vue')
+  },
 ]
 
 const router = new VueRouter({

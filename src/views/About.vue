@@ -5,22 +5,24 @@
     <!-- 多个 slot -->
     <!-- <a-layout></a-layout> -->
 
-    <!-- 在 slot 处访问到 <current-user> 组件内的 data  -->
-    <current-user>
-      <!-- v-slot: 缩写 # -->
-      <template #default="slotProps">{{ slotProps.user.firstName }}</template>
-      <!-- 用解构的形式可让模板更简洁，如下 -->
-      <!-- <template v-slot:default="{ user }">{{ user.firstName }}</template> -->
-    </current-user>
+    <piece>
+      <!-- 在 slot 处访问到 <current-user> 组件内的 data  -->
+      <current-user>
+        <!-- v-slot: 缩写 # -->
+        <template #default="slotProps">{{ slotProps.user.firstName }}</template>
+        <!-- 用解构的形式可让模板更简洁，如下 -->
+        <!-- <template v-slot:default="{ user }">{{ user.firstName }}</template> -->
+      </current-user>
+    </piece>
 
-    <div>
+    <piece>
       <input type="text" v-model="store_basic_info.name" />
       <input type="text" v-model="store_basic_info.type" />
       <input type="text" v-model="store_basic_info.desc" />
       <button @click="updateStoreBasicInfo">updateStoreBasicInfo</button>
-    </div>
+    </piece>
 
-    <div>
+    <piece>
       <h2>fake-ant-button</h2>
       <f-button
         type="warn"
@@ -29,7 +31,17 @@
         :loading="true"
         :disabled="true"
       >fake ant button</f-button>
-    </div>
+    </piece>
+
+    <piece>
+      <h2>子组件被点击后添加某 class</h2>
+      <card
+        v-for="merchant in merchants"
+        :key="merchant.merchant_id"
+        :active="merchant.merchant_id === $route.params.merchant_id"
+        @click.native="$router.push({ name: 'Merchant', params: {'merchant_id': merchant.merchant_id} })"
+      ></card>
+    </piece>
   </div>
 </template>
 
@@ -41,13 +53,19 @@ export default {
   data () {
     return {
       store_id: '1704',
-      store_basic_info: {}
+      store_basic_info: {},
+      merchants: [
+        { merchant_id: '001' },
+        { merchant_id: '002' }
+      ]
     }
   },
   components: {
     'a-layout': () => import('../components/slot_example/a/layout'),
     'current-user': () => import('../components/slot_example/b/current_user'),
     'f-button': () => import('../components/fake_ant/button/button'),
+    card: () => import('./components/card'),
+    piece: () => import('./components/piece'),
   },
   methods: {
     updateStoreBasicInfo () {
