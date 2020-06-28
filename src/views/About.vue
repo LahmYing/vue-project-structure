@@ -34,7 +34,7 @@
     </piece>
 
     <piece>
-      <h2>子组件被点击后添加某 class</h2>
+      <div>子组件被点击后添加某 class</div>
       <card
         v-for="merchant in merchants"
         :key="merchant.merchant_id"
