@@ -1,0 +1,118 @@
+@primary-color      : rgb(76, 216, 235);
+@btn-disable-color  : #c5c8ce;
+@btn-disable-bg     : #f7f7f7;
+@btn-disable-border : #dcdee2;
+
+.btn() {
+  display            : inline-block;
+  margin             : 2px;
+  font-weight        : normal;
+  text-align         : center;
+  vertical-align     : middle;
+  touch-action       : manipulation;
+  cursor             : pointer;
+  background-image   : none;
+  border             : 1px solid transparent;
+  border-top-color   : transparent;
+  border-right-color : transparent;
+  border-bottom-color: transparent;
+  border-left-color  : transparent;
+  white-space        : nowrap;
+  line-height        : 1.5;
+  user-select        : none;
+  height             : 32px;
+  padding            : 0 15px;
+  font-size          : 14px;
+  border-radius      : 4px;
+  transition         : color 0.2s linear,
+    background-color 0.2s linear,
+    border 0.2s linear,
+    box-shadow 0.2s linear;
+}
+
+// Default
+.btn-default() {
+  .button-variant(#000; white; rgb(110, 106, 98));
+
+  &:hover //&:focus
+
+    {
+    .button-color(tint(@primary-color, 20%); white; tint(@primary-color, 20%));
+  }
+
+  &:active,
+  &.active {
+    .button-color(shade(@primary-color, 5%); white; shade(@primary-color, 5%));
+  }
+
+  .active-btn-color(@primary-color);
+}
+
+.button-variant(@color; @background; @border) {
+  .button-color(@color; @background; @border);
+
+  &:hover //&:focus
+
+    {
+    .button-color(tint(@color, 20%); tint(@background, 20%); tint(@border, 20%));
+  }
+
+  &:active,
+  &.active {
+    .button-color(shade(@color, 5%); shade(@background, 5%); shade(@background, 5%));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      .button-color(@btn-disable-color; @btn-disable-bg; @btn-disable-border);
+    }
+  }
+}
+
+.button-color(@color; @background; @border) {
+  color           : @color;
+  background-color: @background;
+  border-color    : @border;
+
+  // a inside Button which only work in Chrome
+  // http://stackoverflow.com/a/17253457
+  >a:only-child {
+    color: currentColor;
+
+    &:after {
+      content   : '';
+      position  : absolute;
+      top       : 0;
+      left      : 0;
+      bottom    : 0;
+      right     : 0;
+      background: transparent;
+    }
+  }
+}
+
+.active-btn-color(@color) {
+  &:focus {
+    box-shadow: 0 0 0 2px fade(@color, 20%);
+  }
+}
+
+.btn-color(@color) {
+  .button-variant(#ffffff; @color; @color);
+
+  &:hover,
+  //&:focus,
+  &:active,
+  &.active {
+    color: #ffffff;
+  }
+
+  .active-btn-color(@color);
+}

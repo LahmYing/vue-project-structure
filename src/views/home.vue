@@ -23,17 +23,6 @@
     </piece>
 
     <piece>
-      <h2>fake-ant-button</h2>
-      <f-button
-        type="warn"
-        shape="circle"
-        size="small"
-        :loading="true"
-        :disabled="true"
-      >fake ant button</f-button>
-    </piece>
-
-    <piece>
       <div>子组件被点击后添加某 class</div>
       <card
         v-for="merchant in merchants"
@@ -63,7 +52,6 @@ export default {
   components: {
     'a-layout': () => import('../components/slot_example/a/layout'),
     'current-user': () => import('../components/slot_example/b/current_user'),
-    'f-button': () => import('../components/fake_ant/button/button'),
     card: () => import('./components/card'),
     piece: () => import('./components/piece'),
   },

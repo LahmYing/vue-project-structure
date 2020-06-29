@@ -20,6 +20,8 @@ Vue.use(ui)
 Vue.use(utils)
 
 Vue.component('Navigation', require('./components/Nav/Navigation.vue').default)
+Vue.component('piece', require('./views/components/piece.vue').default)
+Vue.component('ii-btn', require('./components/imitate-ivew/button/button.vue').default)
 
 new Vue({
   router,

@@ -1,6 +1,15 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div style="margin-bottom: 50px;display: flex; justify-content: space-around;">
+      <span>
+        <router-link to="/home">home</router-link>
+      </span>
+      <span>
+        <router-link to="/components">components</router-link>
+      </span>
+    </div>
+
+    <router-view />
   </div>
 </template>
 

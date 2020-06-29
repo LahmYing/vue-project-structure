@@ -5,14 +5,19 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    path: '/home',
+    name: 'Home',
+    component: () => import('../views/home')
   },
   {
     path: '/merchant/:merchant_id',
     name: 'Merchant',
-    component: () => import('../views/About.vue')
+    component: () => import('../views/home')
+  },
+  {
+    path: '/components',
+    name: 'Components',
+    component: () => import('../views/comps')
   },
 ]
 

@@ -1,0 +1,15 @@
+@import './mixin.less';
+
+@css-prefix    : "ii-";
+@btn-prefix-cls: ~"@{css-prefix}btn";
+
+@warning-color: #e46b6b;
+
+.@{btn-prefix-cls} {
+  .btn;
+  .btn-default;
+
+  &-warn {
+    .btn-color(@warning-color);
+  }
+}
