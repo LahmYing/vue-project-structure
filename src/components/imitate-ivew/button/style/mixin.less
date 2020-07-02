@@ -3,6 +3,21 @@
 @btn-disable-bg     : #f7f7f7;
 @btn-disable-border : #dcdee2;
 
+@btn-height-base       : 32px;
+@btn-height-large      : 40px;
+@btn-height-small      : 24px;
+@btn-circle-size       : @btn-height-base;
+@btn-circle-size-large : @btn-height-large;
+@btn-circle-size-small : @btn-height-small;
+
+@font-size-base  : 14px;
+@font-size-small : 12px;
+@font-size-large : @font-size-base +2px;
+
+@btn-font-size       : @font-size-base;
+@btn-font-size-large : @font-size-large;
+@btn-font-size-small : @font-size-base;
+
 .btn() {
   display            : inline-block;
   margin             : 2px;
@@ -115,4 +130,44 @@
   }
 
   .active-btn-color(@color);
+}
+
+// Circle for Icon
+.btn-circle(@btnClassName) {
+  border-radius: @btn-circle-size;
+
+  &.@{btnClassName}-large {
+    border-radius: @btn-circle-size-large;
+  }
+
+  &.@{btnClassName}-size {
+    border-radius: @btn-circle-size-small;
+  }
+
+  &.@{btnClassName}-icon-only {
+    .square(@btn-circle-size);
+    .button-size(@btn-height-base; 0; @font-size-base + 2; 50%);
+
+    &.@{btnClassName}-large {
+      .square(@btn-circle-size-large);
+      .button-size(@btn-height-large; 0; @btn-font-size-large + 2; 50%);
+    }
+
+    &.@{btnClassName}-small {
+      .square(@btn-circle-size-small);
+      .button-size(@btn-height-small; 0; @font-size-base; 50%);
+    }
+  }
+}
+
+.square(@size) {
+  width : @size;
+  height: @size;
+}
+
+.button-size(@height; @padding; @font-size; @border-radius) {
+  height       : @height;
+  padding      : @padding;
+  font-size    : @font-size;
+  border-radius: @border-radius;
 }

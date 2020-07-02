@@ -23,13 +23,12 @@ export default {
       validator (value) {
         return ['default', 'primary', 'dashed', 'text', 'info', 'success', 'warn', 'error'].indexOf(value) !== -1
       },
-      default: ''
+      default: 'default'
     },
     shape: {
       validator (value) {
-        return ['circle', 'circle-outline', 'round'].indexOf(value) !== -1
-      },
-      default: 'round'
+        return ['circle', 'circle-outline'].indexOf(value) !== -1
+      }
     },
     size: {
       validator (value) {
@@ -67,9 +66,9 @@ export default {
       const { type, shape, size, prefixCls, loading, ghost } = this
       return {
         [`${prefixCls}`]: true,
-        [`${prefixCls}-${type}`]: true,
-        [`${prefixCls}-${shape}`]: true,
-        [`${prefixCls}-${size}`]: true,
+        [`${prefixCls}-${type}`]: !!type,
+        [`${prefixCls}-${shape}`]: !!shape,
+        [`${prefixCls}-${size}`]: !!size,
         [`${prefixCls}-loading`]: loading,
         // [`${prefixCls}-icon-only`]: !this.showSlot && (!!this.icon || !!this.customIcon || this.loading),
         [`${prefixCls}-ghost`]: ghost
