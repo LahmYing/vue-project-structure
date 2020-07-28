@@ -33,7 +33,7 @@
 <script>
 export default {
   props: {
-    'logo_url': {
+    logo_url: {
       type: String,
       default: ''
     }

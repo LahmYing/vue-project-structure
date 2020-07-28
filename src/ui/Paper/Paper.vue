@@ -23,7 +23,7 @@
 <script>
 export default {
   props: {
-    'size': {
+    size: {
       type: String,
       default: 'full',
       validator: function (value) {

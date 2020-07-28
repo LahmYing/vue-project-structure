@@ -19,5 +19,6 @@ module.exports = {
     'comma-dangle': 'off',
     'vue/no-unused-components': 'off',
     'dot-notation': 'off',
+    'prefer-const': 'off',
   }
 }

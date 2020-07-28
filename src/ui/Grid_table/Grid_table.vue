@@ -44,11 +44,11 @@ export default {
   methods: {
     getWidth: function (span) {
       if (!span) {
-        return { 'flex': 1 }
+        return { flex: 1 }
       } else if (typeof span === 'string') {
-        return { 'width': span }
+        return { width: span }
       } else {
-        return { 'flex': span }
+        return { flex: span }
       }
     }
   }

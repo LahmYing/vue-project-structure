@@ -30,11 +30,11 @@ export default {
   computed: {
     getWidth: function () {
       if (!this.span) {
-        return { 'flex': 1 }
+        return { flex: 1 }
       } else if (typeof this.span === 'string') {
-        return { 'width': this.span }
+        return { width: this.span }
       } else {
-        return { 'flex': this.span }
+        return { flex: this.span }
       }
     }
   },
