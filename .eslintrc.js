@@ -20,5 +20,6 @@ module.exports = {
     'vue/no-unused-components': 'off',
     'dot-notation': 'off',
     'prefer-const': 'off',
+    'quote-props': 'off',
   }
 }

@@ -24,12 +24,13 @@
 
     <piece>
       <div>子组件被点击后添加某 class</div>
-      <card
-        v-for="merchant in merchants"
-        :key="merchant.merchant_id"
-        :active="merchant.merchant_id === $route.params.merchant_id"
-        @click.native="$router.push({ name: 'Merchant', params: {'merchant_id': merchant.merchant_id} })"
-      ></card>
+      <card v-for="merchant in merchants" :key="merchant.merchant_id"
+            :active="merchant.merchant_id === $route.params.merchant_id"
+            @click.native="$router.push({ name: 'Merchant', params: {'merchant_id': merchant.merchant_id} })"></card>
+    </piece>
+
+    <piece>
+      <h3 class="gulp-stylus-demo">gulp 编译 stylus</h3>
     </piece>
   </div>
 </template>
@@ -52,8 +53,8 @@ export default {
   components: {
     'a-layout': () => import('../components/slot_example/a/layout'),
     'current-user': () => import('../components/slot_example/b/current_user'),
-    card: () => import('./components/card'),
-    piece: () => import('./components/piece'),
+    'card': () => import('./components/card'),
+    'piece': () => import('./components/piece'),
   },
   methods: {
     updateStoreBasicInfo () {
@@ -79,3 +80,7 @@ export default {
   }
 }
 </script>
+
+<style>
+@import '../css/views/components/gulp_stylus_demo.css';
+</style>
